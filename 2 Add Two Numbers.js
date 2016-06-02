@@ -1,6 +1,7 @@
 function addTwoNumbers(l1, l2) {
-    var before = new ListNode();
-    var tail = before;
+    const before = new ListNode();
+    let tail = before;
+    
     var c = 0;
     
     while (l1 || l2 || c) {

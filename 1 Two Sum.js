@@ -1,9 +1,9 @@
 function twoSum(nums, target) {
-    var map = {};
+    const map = {};
     
-    for (var i = 0; i < nums.length; i++) {
-        var curr = nums[i];
-        var rest = target - curr;
+    for (let i = 0; i < nums.length; i++) {
+        let curr = nums[i];
+        let rest = target - curr;
         
         if (map[rest] !== undefined) {
             return [map[rest], i];

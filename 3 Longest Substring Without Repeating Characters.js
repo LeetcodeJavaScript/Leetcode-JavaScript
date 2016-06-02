@@ -1,7 +1,7 @@
 function lengthOfLongestSubstring(s) {
-    var map = {};
+    const map = {};
     // inclusive
-    var left = 0;
+    let left = 0;
     
     return s.split('').reduce((max, v, i) => {
         left = map[v] >= left ? map[v] + 1 : left;

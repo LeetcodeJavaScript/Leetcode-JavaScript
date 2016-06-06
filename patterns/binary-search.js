@@ -1,4 +1,5 @@
-function binarySearch(arr, func) {
+function binarySearch(arr, predicate) {
+	// arr => [bad, bad, bad, ..., good, good, good, good]
 	// both l and r are inclusive
 	var l = 0;
 	var r = arr.length - 1;
@@ -6,7 +7,7 @@ function binarySearch(arr, func) {
 	while (l !== r) {
 		var m = (l + r) >> 1;
 
-		if (func(arr[m])) {
+		if (predicate(arr[m])) {
 			// keep r in good cond
 			r = m;
 		} else {
@@ -16,5 +17,5 @@ function binarySearch(arr, func) {
 	}
 
 	// post loop
-	// l === r and func(l) === func(r) === true
+	// l === r and predicate(l) === predicate(r) === true
 }

@@ -21,6 +21,7 @@ function combinationSum(candidates, target) {
         prefix.push(candidates[idx]);
         search(idx, rest - candidates[idx]);
         prefix.pop();
+        
         search(idx + 1, rest);
     }
 }

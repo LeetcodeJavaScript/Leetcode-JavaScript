@@ -1,23 +1,19 @@
 function closestValue(root, target) {
-    var min = Number.MAX_VALUE;
-    search(root);
-    return min;
+    var closest = Number.MAX_VALUE;
     
-    function search(n) {
-        if (!n) {
-            return;
+    while (root) {
+        if (Math.abs(root.val - target) < Math.abs(closest - target)) {
+            closest = root.val;
         }
         
-        if (Math.abs(n.val - target) < Math.abs(min - target)) {
-            min = n.val;
-        }
-        
-        if (n.val < target) {
-            search(n.right);
-        } else if (n.val > target) {
-            search(n.left);
+        if (root.val === target) {
+            break;
+        } else if (root.val > target) {
+            root = root.left;
         } else {
-            return;
+            root = root.right;
         }
     }
+    
+    return closest;
 }

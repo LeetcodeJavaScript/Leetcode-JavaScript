@@ -16,11 +16,12 @@ function solution(isBadVersion) {
         
         
         // loop should terminates when l === r
+        // NOTE try not to return inside while loop, which make code cleaner and more readable
         while (l < r) {
             var mid = Math.floor((l + r) / 2);
         
             if (isBadVersion(mid)) {
-                // r never equals m
+                // r never equals to m
                 // so there won't be infinite loop
                 
                 // keep r in bad version
